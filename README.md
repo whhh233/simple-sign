@@ -1,6 +1,6 @@
 # simple-sign
 
-简单的login界面
+简易的login界面
 
 默认后端端口16666
 
