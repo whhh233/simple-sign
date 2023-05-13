@@ -16,6 +16,6 @@ function getCookie(name) {
   return null;
 }
 
-if (getCookie("is_login") != "yes") {
+if (getCookie("login_cookies") != "yes") {
   window.location = "https://login.xf-yun.cn/pages-login.html";
 }
