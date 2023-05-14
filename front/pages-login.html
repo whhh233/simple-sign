@@ -23,8 +23,17 @@ type: "get",
 data: {name:$('input[name=name]').val(),'pass':$('input[name=pass]').val()},
 contentType: "application/x-www-form-urlencoded;charset=UTF-8",
 success: function (obj){
-document.cookie="login_cookies="+obj.state+";domain=.xxx.com";//生成*.xxx.com的cookies
-window.location.href='https://example.com';//验证成功后自动跳转至example.com
+   if (obj.state=="yes"){
+   document.cookie="login_cookies="+obj.state+";domain=.xxx.com";//生成*.xxx.com的cookies
+   alert("登录成功");
+   window.location.href='https://example.com';//验证成功后自动跳转至example.com
+   }
+   if (obj.state=="no"){
+      alert("登录失败");
+   }
+},
+error: function(fail){
+   alert("请求失败");
 }})
 });
 </script>
